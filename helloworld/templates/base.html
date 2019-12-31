@@ -1,0 +1,25 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - tsapp</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css', _external=True) }}">
+<nav>
+  <h1><a href="{{ url_for('index') }}">tsapp</a></h1>
+  <ul>
+    {% if session.user_id %}
+      <li><a href="{{ url_for('users.profileresource') }}">Profile</a>
+      <li><a href="{{ url_for('auth.logoutresource') }}">Log Out</a>
+    {% else %}
+      <li><a href="{{ url_for('auth.registerresource') }}">Register</a>
+      <li><a href="{{ url_for('auth.loginresource') }}">Log In</a>
+      <li><a href="{{ url_for('auth.requestpasswordresource') }}">Reset Password</a>
+    {% endif %}
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% for message in get_flashed_messages() %}
+    <div class="flash">{{ message }}</div>
+  {% endfor %}
+  {% block content %}{% endblock %}
+</section>
