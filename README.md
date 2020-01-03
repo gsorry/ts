@@ -41,11 +41,11 @@ AWS CodeStar user guide.
    need without affecting the system Python installation. At the terminal, type
    the following command:
 
-        $ virtualenv .venv
+        $ python3 -m venv .venv
 
 2. Activate the virtual environment:
 
-        $ activate ./venv/bin/activate
+        $ . ./venv/bin/activate
 
 3. Install Python dependencies for this project:
 
@@ -59,7 +59,11 @@ AWS CodeStar user guide.
 
         $ python helloworld/application.py --port 8000
 
-6. Open http://127.0.0.1:8000/ in a web browser to view the output of your
+6. Export environment variable for Sendgrid API Key:
+
+        $  export SENDGRID_API_KEY='<YOUR_SECRET_API_KEY>'
+
+7. Open http://127.0.0.1:8000/ in a web browser to view the output of your
    service.
 
 What Do I Do Next?
