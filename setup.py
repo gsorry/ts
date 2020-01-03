@@ -8,6 +8,7 @@ setup(
         'flask',
         'flask_marshmallow',
         'flask_sqlalchemy',
+        'marshmallow-sqlalchemy',
         'passlib',
         'sendgrid',
         'wtforms',
